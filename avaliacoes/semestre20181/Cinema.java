@@ -4,22 +4,32 @@ public class Cinema {
 
 	private Sessao[] sessoes;
 
-	cinema(){
+	Cinema(int Nsessoes){
 		// oi mãe :)
+		this.sessoes = new Sessao[Nsessoes];
 	}
 
 	void AdicionarSessao(Sessao sessao){
 
 		
-		for(int i = 0; i < this.sessoes.lenght; i++){
+		for(int i = 0; i < this.sessoes.length; i++){
+			if(this.sessoes[i] == null){
+				this.sessoes[i] = sessao;
+				return;
+			}
 			if(
-				sessao.getHora().equals(this.sessoes[i].getHora()) ||
-				sessao.getNumeroSessao().equals(this.sessoes[i].getNumeroSessao())
+				sessao.getHora() == this.sessoes[i].getHora() ||
+				sessao.getNumeroSessao() == this.sessoes[i].getNumeroSessao()
 			){
 				return; //termina o metodo sem fazer nenhuma alteração
 			}
 		}
 
-		this.sessoes.append(sessao);
+	}
+
+	void verSessoes(){
+		for(int i=0; i<this.sessoes.length; i++){
+			System.out.println(this.sessoes[i].toString());
+		}
 	}
 }

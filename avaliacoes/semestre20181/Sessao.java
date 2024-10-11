@@ -1,4 +1,4 @@
-package avaliacoes.semetre20181;
+package avaliacoes.semestre20181;
 
 public class Sessao {
 	
@@ -46,5 +46,14 @@ public class Sessao {
 
 	int getHora(){
 		return this.hora;
+	}
+
+	int getNAscentos(){
+		return this.numero_ascentos;
+	}
+
+	@Override
+	public String toString(){
+		return "Filme: " + this.filme.getTitulo() + " genero: " + this.filme.getGenero() + " classificação indicativa: " + this.filme.getFaixaEtaria() + "\n" + "sessão: " + this.getNumeroSessao() + " Horário: " + this.getHora() + " Ascentos" + this.getNAscentos() + "\n";
 	}
 }
