@@ -2,6 +2,12 @@ package trabalho1;
 
 import java.util.Scanner;
 
+/*
+
+	OBSERVAÇÃO: depois de inserir os valores que forem solicitados precione "ENTER" para continuar.
+
+*/
+
 public class TestaProduto {
 	
 	static Scanner input = new Scanner(System.in); 	//Objeto Scanner captura entrada do usuario
