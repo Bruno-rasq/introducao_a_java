@@ -2,7 +2,7 @@ package recuperacoes.av1part2;
 
 import java.util.Scanner;
 
-public class TestaContaBancaria {
+public class TestaConta {
 
 	public static void main(String[] args){
 
