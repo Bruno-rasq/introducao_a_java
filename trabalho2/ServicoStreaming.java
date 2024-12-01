@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class ServicoStreaming {
 
-	private String FilePath = "trabalho2/servicostreaming.csv";
+	private String FilePath = "trabalho2/servicostreaming.txt";
 	private ArrayList<SerieTV> catalogo = new ArrayList<>();
 
 	ServicoStreaming(){}
@@ -49,56 +49,75 @@ public class ServicoStreaming {
 
 	public void listarSeriesTV()
 	{
+		int contador = 0;
 		for(SerieTV serie: catalogo){
 			System.out.println(serie.toString());
+			contador += 1;
 		}
+
+		if(contador == 0){ System.out.println("Nenhuma Serie disponivel no momento...");}
 	}
 
 	public void listarSeriesTV(String genero)
 	{
+		int contador = 0;
 		for(SerieTV serie: catalogo){
 
 			if(serie.getGenero().equals(genero)){
 				System.out.println(serie.toString());
+				contador += 1;
 			}
 		}
+		if(contador == 0){ System.out.println("Nenhuma Serie disponivel no momento...");}
 	}
 
 	public void listarSeriesTV(int ano)
 	{
+		int contador = 0;
 		for(SerieTV serie: catalogo){
 			if(serie.getAnoLancamento() == ano){
 				System.out.println(serie.toString());
+				contador += 1;
 			}
 		}
+		if(contador == 0){ System.out.println("Nenhuma Serie disponivel no momento...");}
 	}
 
 	
 	//metodos de persistencia de dados CSV.
-	void carregarDados() throws IOException 
+	void carregarDados()
 	{
-		File file = new File(this.FilePath);
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
+		try {
+			File file = new File(this.FilePath);
+			FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr);
 
-		String linha = null;
-		while((linha = br.readLine()) != null){
-			catalogo.add(new SerieTV().setSerieTVCSV(linha));
-		}
+			String linha = null;
+			while((linha = br.readLine()) != null){
+				SerieTV serie = new SerieTV();
+				serie.setSerieTVCSV(linha);
+				catalogo.add(serie);
+			}
+
+			br.close();
+		} catch (IOException erro){ System.out.println(erro.getMessage()); }
 	}
 
 	void gravar()
 	{
-		File file = new File(this.FilePath);
-		FileWriter fw = new FileWriter(file);
-		BufferedWriter bw = new BufferedWriter(fw);
-		PrintWriter pw = new PrintWriter(bw);
+		try {
+			File file = new File(this.FilePath);
+			FileWriter fw = new FileWriter(file);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
 
-		for(SerieTV serie: catalogo){
-			pw.println(serie.getSerieTVCSV());
-		}
+			for(SerieTV serie: catalogo){
+				pw.println(serie.getSerieTVCSV());
+			}
 
-		pw.close();
-		bw.close();
+			pw.close();
+			bw.close();
+		} catch (IOException erro){ System.out.println(erro.getMessage()); }
+	
 	}
 }

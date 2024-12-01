@@ -75,7 +75,7 @@ public class SerieTV {
 	public int getNumeroTemporadas()
 	{ return this.temporadas; }
 
-	public bool getSerieConcluida()
+	public boolean getSerieConcluida()
 	{ return this.concluida; }
 
 	//Metodos
@@ -85,7 +85,7 @@ public class SerieTV {
 
 		this.setTitulo(serietv[0]);
 		this.setGenero(serietv[1]);
-		this.setAnoLancamento(Integer. parseInt(serietv[2]));
+		this.setAnoLancamento(Integer.parseInt(serietv[2]));
 		this.setTemporadas(Integer.parseInt(serietv[3]));
 		this.concluida = Boolean.parseBoolean(serietv[4]);
 	}
@@ -102,11 +102,15 @@ public class SerieTV {
 	@Override
 	public String toString()
 	{
-		return "Nome: " + this.getTitulo() + "\n" + "genero: " + this.getGenero() + " temporadas: " + this.getNumeroTemporadas() + "\n" + "Ano: " + this.getAnoLancamento() + " status concluida: " + this.getSerieConcluida();
+		return "Nome: " + this.getTitulo() + "\n" +
+			"genero: " + this.getGenero() +
+			" temporadas: " + this.getNumeroTemporadas() +"\n" +
+			"Ano: " + this.getAnoLancamento() +
+			" status concluida: " + this.getSerieConcluida();
 	}
 
 	@Override
-	public bool equals(Object serie)
+	public boolean equals(Object serie)
 	{
 		if(serie == this){ return true; }
 		if(serie == null || this.getClass() != serie.getClass())
