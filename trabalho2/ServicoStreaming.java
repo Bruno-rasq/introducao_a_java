@@ -29,22 +29,24 @@ public class ServicoStreaming {
 
 	public void removerSerieTV(SerieTV stv)
 	{
-		for(SerieTV s: catalogo){
-			if(s.equals(stv)){
-				catalogo.remove(s);
-				return;
-			}
+		for (int i = 0; i < catalogo.size(); i++) {
+	        SerieTV serie = catalogo.get(i);
+	        if (serie.equals(stv)) {
+	            catalogo.remove(i);
+	            return;
+	        }
 		}
 	}
 
-	public void removerSerieTV(String titulo, int ano)
+	public void removerSerieTV(String titulo, int ano) 
 	{
-		for(SerieTV serie: catalogo){
-			if(serie.getTitulo().equals(titulo) && serie.getAnoLancamento() == ano){
-				catalogo.remove(serie);
-				return;
-			}
-		}
+	    for (int i = 0; i < catalogo.size(); i++) {
+	        SerieTV serie = catalogo.get(i);
+	        if (serie.getTitulo().equals(titulo) && serie.getAnoLancamento() == ano) {
+	            catalogo.remove(i);
+	            return;
+	        }
+	    }
 	}
 
 	public void listarSeriesTV()
@@ -52,6 +54,7 @@ public class ServicoStreaming {
 		int contador = 0;
 		for(SerieTV serie: catalogo){
 			System.out.println(serie.toString());
+			System.out.println("------------------------");
 			contador += 1;
 		}
 
@@ -65,6 +68,7 @@ public class ServicoStreaming {
 
 			if(serie.getGenero().equals(genero)){
 				System.out.println(serie.toString());
+				System.out.println("------------------------");
 				contador += 1;
 			}
 		}
@@ -77,6 +81,7 @@ public class ServicoStreaming {
 		for(SerieTV serie: catalogo){
 			if(serie.getAnoLancamento() == ano){
 				System.out.println(serie.toString());
+				System.out.println("------------------------");
 				contador += 1;
 			}
 		}
@@ -107,7 +112,7 @@ public class ServicoStreaming {
 	{
 		try {
 			File file = new File(this.FilePath);
-			FileWriter fw = new FileWriter(file);
+			FileWriter fw = new FileWriter(file, false);
 			BufferedWriter bw = new BufferedWriter(fw);
 			PrintWriter pw = new PrintWriter(bw);
 

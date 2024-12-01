@@ -84,17 +84,14 @@ public class Programa {
 	}
 
 
-	/* TODO: CORRIGIR PROBLEMA */
 	public static void removerSerieTvDoStreaming()
 	{
 		System.out.println("Insira titulo da serie: ");
-		String titulo = in.nextLine();
 		in.nextLine();
+		String titulo = in.nextLine();
 
 		System.out.println("Insira o ano: ");
 		int ano = in.nextInt();
-		in.nextLine();
-
 		DeBugStream.removerSerieTV(titulo, ano);
 	}
 	
@@ -103,8 +100,6 @@ public class Programa {
 		System.out.println("Selecione o ano de lancamento: ");
 		int ano = in.nextInt();
 		in.nextLine();
-
-
 		DeBugStream.listarSeriesTV(ano);
 	}
 	
@@ -113,8 +108,6 @@ public class Programa {
 		System.out.println("Selecione um genero: (Drama, ficcao, comedia, Romance)");
 		in.nextLine();
 		String genero = in.nextLine();
-
-
 		DeBugStream.listarSeriesTV(genero);
 	}
 	
