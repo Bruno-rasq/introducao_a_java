@@ -1,4 +1,4 @@
-package trabalho2;
+package streaming;
 
 public class SerieTV {
 
@@ -16,7 +16,7 @@ public class SerieTV {
 		this.setGenero(genero);
 		this.setTemporadas(temporada);
 		this.setAnoLancamento(ano);
-		this.concluida = concluida;
+		this.setStatus(concluida);
 	}
 
 	//Setters
@@ -60,6 +60,11 @@ public class SerieTV {
 			return;
 		}
 		this.ano = 2020;
+	}
+
+	public void setStatus(boolean status)
+	{
+		this.concluida = status;
 	}
 
 	//Getters

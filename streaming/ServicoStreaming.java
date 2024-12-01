@@ -1,4 +1,4 @@
-package trabalho2;
+package streaming;
 
 import java.util.ArrayList;
 import java.io.File;
@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class ServicoStreaming {
 
-	private String FilePath = "trabalho2/servicostreaming.txt";
+	private String FilePath = "streaming/servicostreaming.csv";
 	private ArrayList<SerieTV> catalogo = new ArrayList<>();
 
 	ServicoStreaming(){}
@@ -47,6 +47,17 @@ public class ServicoStreaming {
 	            return;
 	        }
 	    }
+	}
+
+	public void alterarDadosSerie(String titulo, int ano, int temporadas, boolean concluida)
+	{
+		for(SerieTV serie: catalogo){
+			if(serie.getTitulo().equals(titulo) && serie.getAnoLancamento() == ano){
+				serie.setTemporadas(temporadas);
+				serie.setStatus(concluida);
+				return;
+			}
+		}
 	}
 
 	public void listarSeriesTV()

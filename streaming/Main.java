@@ -1,8 +1,8 @@
-package trabalho2;
+package streaming;
 
 import java.util.Scanner;
 
-public class Programa {
+public class Main {
 	
 	public static ServicoStreaming DeBugStream = new ServicoStreaming();
 	public static Scanner in = new Scanner(System.in);
@@ -77,10 +77,23 @@ public class Programa {
 		DeBugStream.adicionarSerieTV(serie);
 	}
 
-	/* TODO: IMPLEMENTAR CODIGO*/
+	/* Interpretei que os dados alterados deveriam ser só número de temporadas e seu status de concluida ou não.*/
 	public static void alterarDadosSerieTV()
 	{
-		System.out.println("sem implementacao ainda...");
+		System.out.println("Insira titulo da serie: ");
+		in.nextLine();
+		String titulo = in.nextLine();
+
+		System.out.println("Insira o ano: ");
+		int ano = in.nextInt();
+
+		System.out.println("set numero temporadas:");
+		int temporadas = in.nextInt();
+
+		System.out.println("set status:");
+		boolean status = in.nextBoolean();
+
+		DeBugStream.alterarDadosSerie(titulo, ano, temporadas, status);
 	}
 
 
