@@ -54,6 +54,7 @@ public class Programa {
 		System.out.println("------------------------");
 
 		System.out.println("titulo: ");
+		in.nextLine();
 		String titulo = in.nextLine();
 
 		System.out.println("genero: ");
@@ -61,30 +62,38 @@ public class Programa {
 
 		System.out.println("ano de lancamento: ");
 		int ano = in.nextInt();
+		in.nextLine();
 
 		System.out.println("temporada atual:");
 		int temporada = in.nextInt();
+		in.nextLine();
 
 		System.out.println("status concluid0: (true ou false)");
 		boolean concluida = in.nextBoolean();
+		in.nextLine();
 
 		SerieTV serie = new SerieTV(titulo, genero, ano, temporada, concluida);
 
 		DeBugStream.adicionarSerieTV(serie);
 	}
-	
+
+	/* TODO: IMPLEMENTAR CODIGO*/
 	public static void alterarDadosSerieTV()
 	{
 		System.out.println("sem implementacao ainda...");
 	}
-	
+
+
+	/* TODO: CORRIGIR PROBLEMA */
 	public static void removerSerieTvDoStreaming()
 	{
 		System.out.println("Insira titulo da serie: ");
 		String titulo = in.nextLine();
+		in.nextLine();
 
 		System.out.println("Insira o ano: ");
 		int ano = in.nextInt();
+		in.nextLine();
 
 		DeBugStream.removerSerieTV(titulo, ano);
 	}
@@ -93,6 +102,8 @@ public class Programa {
 	{
 		System.out.println("Selecione o ano de lancamento: ");
 		int ano = in.nextInt();
+		in.nextLine();
+
 
 		DeBugStream.listarSeriesTV(ano);
 	}
@@ -100,7 +111,9 @@ public class Programa {
 	public static void listarSeriesPorGenero()
 	{
 		System.out.println("Selecione um genero: (Drama, ficcao, comedia, Romance)");
+		in.nextLine();
 		String genero = in.nextLine();
+
 
 		DeBugStream.listarSeriesTV(genero);
 	}
