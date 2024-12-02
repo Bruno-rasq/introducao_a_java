@@ -17,13 +17,13 @@ public class Main {
 			int opcao = in.nextInt();
 			switch (opcao){
 					
-				case 1: { cadastrarNovaSerieTV(); 			break; }
-				case 2: { alterarDadosSerieTV();  			break; }
-				case 3: { removerSerieTvDoStreaming();  	break; }
+				case 1: { cadastrarNovaSerieTV(); 	    break; }
+				case 2: { alterarDadosSerieTV();            break; }
+				case 3: { removerSerieTvDoStreaming();      break; }
 				case 4: { listarSeriesPorAnoLancamento();   break; }
-				case 5: { listarSeriesPorGenero(); 			break; }
-				case 6: { listarTodasAsSeriesTV(); 			break; }
-				case 7: { sair(); 							return; }
+				case 5: { listarSeriesPorGenero(); 	    break; }
+				case 6: { listarTodasAsSeriesTV(); 	    break; }
+				case 7: { sair(); 			    return; }
 					
 				default: { break; }
 			}
